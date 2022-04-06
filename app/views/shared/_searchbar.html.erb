@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="/nasa/index">  NASA API  </a>
+    <%= form_with url: "/", html: {class: "d-flex"}, method: :get do |form| %>
+      <%= form.text_field :search_term, class: 'form-control me-2' %>
+      <button class="btn btn-outline-success">Search</button>
+    <% end %>
+  </div>
+</nav>

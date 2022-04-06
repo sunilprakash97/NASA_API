@@ -1,0 +1,29 @@
+<%= render partial: "shared/searchbar" %>
+<h1> </h1>
+<table> 
+<tr>
+    <th>Date</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Link</th>
+</tr>
+    <% if @value.nil? %>
+        <% @nasa.each do |print| %>
+        <tr>
+            <td><%= print['date'] %></td>
+            <td><%= image_tag(print['hdurl']) %></td>
+            <td><%= print['title']%></td>
+            <td><a href="/nasa/about?search_term=<%= print['date'] %>">Link</a></td>
+        </tr>    
+    <% end %> 
+    
+    <% else %>
+        <tr>
+            <td><%= @nasa['date'] %></td>
+            <td><%= image_tag(@nasa['hdurl']) %></td>
+            <td><%= @nasa['title']%></td>
+            <td><a href="/nasa/about?search_term=<%= @nasa['date'] %>">Link</a></td>
+        </tr>    
+    <% end %>
+
+</table>
